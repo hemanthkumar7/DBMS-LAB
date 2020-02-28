@@ -40,8 +40,10 @@ select * from suppliers;
 select * from Parts;
 select distinct(suppliers.sid) from Suppliers,Parts,catalog 
 where Suppliers.sid = catalog.sid and parts.pid=catalog.pid and Parts.color in("Red","Green");
+
 select distinct(suppliers.sid) from Suppliers,Parts,catalog 
 where Suppliers.sid = catalog.sid and parts.pid=catalog.pid and Parts.color = "Red" or Suppliers.city ="Bangalore";
+
 select s1.sid,s2.sid,p1.pid from Suppliers s1,Suppliers s2, Parts p1, catalog c1,catalog c2
 where s1.sid =c1.sid and s2.sid=c2.sid and p1.pid=c1.pid and p1.pid= c2.pid and c1.cost>c2.cost;
 

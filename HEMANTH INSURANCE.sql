@@ -7,13 +7,13 @@ create table person
   primary key(driver_id)
   );
   show databases;
-  create table car
+create table car
   (reg_num varchar(20),
     model varchar(20),
     year int,
     primary key(reg_num)
     );
-    create table accident
+create table accident
     (report_num varchar(20),
       accident date,
       location varchar(20),
@@ -21,14 +21,14 @@ create table person
       );
       
       
-      create table owns
+ create table owns
       (driver_id varchar(20),
        reg_num varchar(20),
        primary key(driver_id,reg_num),
        foreign key(driver_id)references person(driver_id),
        foreign key(reg_num)references car(reg_num)
        );
-       create table participated
+  create table participated
        (driver_id varchar(20),
 		reg_num varchar(20),
         report_num varchar(20),
@@ -38,44 +38,45 @@ create table person
         foreign key(reg_num)references car(reg_num),
         foreign key(report_num)references accident(report_num)
         );
-         insert into person values("A01","Richard","srinivas nagar");
-         insert into person values("A02","Pradeep","rajaji nagar");
-         insert into person values("A03","Smith","ashok nagar");
-         insert into person values("A04","VENU","N R colony");
-         insert into person values("A05","John","Hanumanth nagar");
+ insert into person values("A01","Richard","srinivas nagar");
+ insert into person values("A02","Pradeep","rajaji nagar");
+ insert into person values("A03","Smith","ashok nagar");
+ insert into person values("A04","VENU","N R colony");
+ insert into person values("A05","John","Hanumanth nagar");
          select * from person;
-         insert into car values("KA052250","indica","1990");
-         insert into car values("KA031181","lancer","1957");
-         insert into car values("KA095477","toyota","1998");
-         insert into car values("KA053408","honda","2008");
-         insert into car values("KA041702","audi","2005");
+ insert into car values("KA052250","indica","1990");
+ insert into car values("KA031181","lancer","1957");
+ insert into car values("KA095477","toyota","1998");
+ insert into car values("KA053408","honda","2008");
+ insert into car values("KA041702","audi","2005");
            select * from car;
-     insert into owns values("A01","KA052250");     
-	insert into owns values("A02","KA053408");
-    insert into owns values("A03","KA031181");
-    insert into owns values("A04","KA095477");
-    insert into owns values("A05","KA041702");
-       select * from owns;
-   insert into accident values("11","2003-01-01","MYSORE ROAD");   
-    insert into accident values("12","2004-02-02","SOUTH END CIRCLE"); 
-    insert into accident values("13","2003-01-21","BULLTEMPLE ROAD");    
-	insert into accident values("14","2008-02-17","MYSORE ROAD"); 
-    insert into accident values("15","2005-03-04","KANAKPURA ROAD");
+ insert into owns values("A01","KA052250");     
+ insert into owns values("A02","KA053408");
+ insert into owns values("A03","KA031181");
+ insert into owns values("A04","KA095477");
+ insert into owns values("A05","KA041702");
+   select * from owns;
+ insert into accident values("11","2003-01-01","MYSORE ROAD");   
+ insert into accident values("12","2004-02-02","SOUTH END CIRCLE"); 
+ insert into accident values("13","2003-01-21","BULLTEMPLE ROAD");    
+ insert into accident values("14","2008-02-17","MYSORE ROAD"); 
+ insert into accident values("15","2005-03-04","KANAKPURA ROAD");
   select * from accident;  
-insert into  participated values("A01","KA052250","11",10000);
-insert into  participated values("A02","KA053408","12",50000);
-insert into  participated values("A03","KA095477","13",25000);
-insert into  participated values("A04","KA031181","14",3000);
-insert into  participated values("A05","KA041702","15",5000);
+ insert into  participated values("A01","KA052250","11",10000);
+ insert into  participated values("A02","KA053408","12",50000);
+ insert into  participated values("A03","KA095477","13",25000);
+ insert into  participated values("A04","KA031181","14",3000);
+ insert into  participated values("A05","KA041702","15",5000);
   select * from participated ;
   select * from person;
-   select * from car;
- select * from owns;
- select * from accident;     
- select * from participated ;   
+  select * from car;
+  select * from owns;
+  select * from accident;     
+  select * from participated ;   
   
   //NESTED QUERY
-    select person.name
+  /* list the name of drivers whose damage  is greater than the average damage amount*/
+select person.name
 from person,participated
 where person.driver_id=participated.driver_id  and damage_amount>
 (select avg(damage_amount) from participated);

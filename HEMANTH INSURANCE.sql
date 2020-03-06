@@ -74,6 +74,9 @@ insert into  participated values("A05","KA041702","15",5000);
  select * from accident;     
  select * from participated ;   
   
-  
-  
+  //NESTED QUERY
+    select person.name
+from person,participated
+where person.driver_id=participated.driver_id  and damage_amount>
+(select avg(damage_amount) from participated);
 

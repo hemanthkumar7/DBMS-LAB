@@ -47,3 +47,8 @@ where Suppliers.sid = catalog.sid and parts.pid=catalog.pid and Parts.color = "R
 select s1.sid,s2.sid,p1.pid from Suppliers s1,Suppliers s2, Parts p1, catalog c1,catalog c2
 where s1.sid =c1.sid and s2.sid=c2.sid and p1.pid=c1.pid and p1.pid= c2.pid and c1.cost>c2.cost;
 
+//nested query
+select s.sname,p.pname
+from suppliers s,parts p, catalog c
+where s.sid=c.sid and p.pid=c.pid and c.cost=(select max(cost) from catalog 
+     where p.pid=pid);

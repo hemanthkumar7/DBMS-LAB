@@ -132,32 +132,3 @@ HAVING COUNT (*) >= ALL (SELECT COUNT (*)
 FROM Student S2
 WHERE s1.age = S2.age
 GROUP BY S2.lvl, S2.age));
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         
-                                         

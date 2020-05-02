@@ -1,3 +1,5 @@
+create database db_1bm18cs037;
+use db_1bm18cs037;
 CREATE TABLE student(
      regno VARCHAR(15),
      name VARCHAR(20),
@@ -5,12 +7,12 @@ CREATE TABLE student(
      bdate DATE,
      PRIMARY KEY (regno) );
 
-
 CREATE TABLE course(
      courseno INT,
      cname VARCHAR(20),
      dept VARCHAR(20),
      PRIMARY KEY (courseno) );
+     
 CREATE TABLE enroll(
      regno VARCHAR(15),
      courseno INT,
@@ -42,7 +44,6 @@ INSERT INTO student (regno,name,major,bdate) VALUES
      ('1pe11cs004','d','sr','19930413'),
      ('1pe11cs005','e','jr','19940824');
 
-
 INSERT INTO course VALUES (111,'OS','CSE'),
      (112,'EC','CSE'),
      (113,'SS','ISE'),
@@ -59,13 +60,11 @@ INSERT INTO text VALUES (book_isbn,book_title,publisher,author)
      (905,'DATABASE MANAGER','PEARSON','BOB'),
      (906,'SIGNALS','HALL INDIA','SUMIT');
 
-
 INSERT INTO enroll (regno,courseno,sem,marks) VALUES ('1pe11cs001',115,3,100),
      ('1pe11cs002',114,5,100),
      ('1pe11cs003',113,5,100),
      ('1pe11cs004',111,5,100),
      ('1pe11cs005',112,3,100);
-
 
 INSERT INTO book_adoption (courseno,sem,book_isbn) VALUES
 (111,5,900),

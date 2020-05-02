@@ -129,6 +129,12 @@ INSERT INTO IAMARKS (USN, SUBCODE, SSID, TEST1, TEST2, TEST3) VALUES ('1RN13CS09
 INSERT INTO IAMARKS (USN, SUBCODE, SSID, TEST1, TEST2, TEST3) VALUES ('1RN13CS091','10CS83','CSE8C', 19, 15, 20); 
 INSERT INTO IAMARKS (USN, SUBCODE, SSID, TEST1, TEST2, TEST3) VALUES ('1RN13CS091','10CS84','CSE8C', 20, 16, 19); 
 INSERT INTO IAMARKS (USN, SUBCODE, SSID, TEST1, TEST2, TEST3) VALUES ('1RN13CS091','10CS85','CSE8C', 15, 15, 12);
+                           
+select * from IAMARKS;
+select * from SUBJECT;
+select * from CLASS;
+select * from SEMSEC;
+select * from STUDENT;
 
 Queries:
 /*  List all the student details studying in fourth semester ‘C’ section */

@@ -64,7 +64,7 @@ select * from BankAccount;
 select * from BankCustomer;
 select * from Depositer;
 select customer_name from Depositer group by customer_name having count(*)>1
-/*: Find Find all the customers who have at least two deposits at the same branch */
+/* Find Find all the customers who have at least two deposits at the same branch */
 Select C.customername 
 from BankCustomer C
 where exits(

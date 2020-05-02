@@ -64,15 +64,31 @@ select * from BankAccount;
 select * from BankCustomer;
 select * from Depositer;
 select customer_name from Depositer group by customer_name having count(*)>1
-
-
-
-
-
-
-
-
-
- 
-
-
+/*: Find Find all the customers who have at least two deposits at the same branch */
+Select C.customername 
+from BankCustomer C
+where exits(
+select D.customername, count(D.customername)
+                     from depositer D, BankAccount BA
+                    where 
+                          D.accno =BA.accno AND
+                          C.customername =D.customername AND
+                          BA.branchname =”SBI_ResidencyRoad”
+                      Group by D.customername 
+                       Having count(D.customername)>=2;
+);
+/*Find all the customers who have an account at all the branches located in a specific city (Ex. Delhi) */
+select BC.customername
+from BankCustomer BC
+where not exists  (        select bracnhname from Branch where branchcity=‘Delhi’
+                                minus
+                                (select BA.branchname from Depositer D, BankAccount BA
+                                  where D.accno=BA.accno and BC.customername=D.customername)
+                               );
+ /*Demonstrate how you delete all account tuples at every branch located in a specific city (Ex. Bomay) */
+ delete  from BankAccount
+where branchname IN (
+                                   select branchname
+                                   from Branch
+                                   where branchcity=‘BOMBAY’
+                                      );

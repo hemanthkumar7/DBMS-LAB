@@ -1,3 +1,5 @@
+create database db_1bm18cs037;
+use db_1bm18cs037;
 CREATE TABLE ACTOR ( 
 ACT_ID NUMBER (3), 
 ACT_NAME VARCHAR (20), 
@@ -59,6 +61,12 @@ INSERT INTO RATING VALUES (1002, 2);
 INSERT INTO RATING VALUES (1003, 5); 
 INSERT INTO RATING VALUES (1004, 4);
 
+select * from RATING;                                        
+select * from MOVIE_CAST;                                        
+select * from MOVIES;
+select * from DIRECTOR;
+select * from ACTOR;
+                                        
 Queries:
 /*List the titles of all movies directed by ‘Hitchcock’ */
 SELECT MOV_TITLE 

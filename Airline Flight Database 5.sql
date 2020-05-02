@@ -144,8 +144,7 @@ WHERE F.flno IN ( ( SELECT F0.flno
  AND F1.departs > F0.arrives
  AND F2.departs > F1.arrives
  AND extract(hour from F2.arrives) < 18));
- 
- /* xv.	Print the name and salary of every non-pilot whose salary is more than the average salary for pilots. */
+ /* Print the name and salary of every non-pilot whose salary is more than the average salary for pilots. */
 SELECT E.ename, E.salary
 FROM Employees E
 WHERE E.eid NOT IN ( SELECT DISTINCT C.eid
@@ -155,12 +154,4 @@ AND E.salary >( SELECT AVG (E1.salary)
  WHERE E1.eid IN
 ( SELECT DISTINCT C1.eid
  FROM Certified C1 ) ); 
- 
- 
- 
-
-
-
-
-
  

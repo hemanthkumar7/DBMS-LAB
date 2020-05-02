@@ -69,5 +69,3 @@ AND C.sid = S.sid
 AND C.cost = (SELECT MAX (C1.cost)
 		FROM Catalog C1
 		WHERE C1.pid = P.pid);
-
-

@@ -86,10 +86,3 @@ WHERE C.ORD_DATE = B.ORD_DATE);
 /* Demonstrate the DELETE operation by removing salesman with id 1000. All his orders must also be deleted.*/ 
 DELETE FROM SALESMAN 
 WHERE SALESMAN_ID=1000;
-
-
-
-
-
-
-

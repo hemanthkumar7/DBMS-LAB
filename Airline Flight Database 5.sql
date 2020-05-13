@@ -89,7 +89,9 @@ FROM Certified C, Aircraft A
 WHERE C.aid = A.aid
 GROUP BY C.eid
 HAVING COUNT (*) > 3; 
-
+SELECT C.EID,MAX(A.CRUISINGRANGE) AS MAX_CRUSING_RANGE FROM CERTIFIED C,AIRCRAFT A WHERE C.AID=A.AID AND 
+C.EID=(SELECT EID FROM CERTIFIED GROUP BY EID HAVING COUNT(*)>3);
+	     
 /* Find the names of pilots whose salary is less than the price of the cheapest route from Bangalore to Frankfurt.*/
 SELECT DISTINCT E.ename
 FROM Employees E
